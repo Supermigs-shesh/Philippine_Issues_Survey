@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Philippine Issues Survey</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="music/love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= WELCOME ================= -->
+
+<section id="welcome" class="page active">
+
+    <div class="surveyBox">
+
+        <img src="images/welcome.jpg" class="welcomePic">
+
+        <h1>Philippine Issues Survey 2026</h1>
+
+        <p>
+            Hello!
+
+            <br><br>
+
+            Thank you for taking the time to answer this short survey.
+
+            This questionnaire aims to gather opinions regarding several important issues currently affecting the Philippines.
+
+            Your honest answers are greatly appreciated.
+
+        </p>
+
+        <button onclick="startSurvey()">
+            Start Survey
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= SURVEY ================= -->
+
+<section id="survey" class="page">
+
+<div class="surveyBox">
+
+<h2>Questionnaire</h2>
+
+<div class="question">
+
+<p>1. Which issue should the government prioritize the most?</p>
+
+<label><input type="radio" name="q1"> Education</label>
+
+<label><input type="radio" name="q1"> Healthcare</label>
+
+<label><input type="radio" name="q1"> Employment</label>
+
+<label><input type="radio" name="q1"> Transportation</label>
+
+</div>
+
+<div class="question">
+
+<p>2. Do you believe quality education should be accessible to everyone?</p>
+
+<label><input type="radio" name="q2"> Yes</label>
+
+<label><input type="radio" name="q2"> No</label>
+
+</div>
+
+<div class="question">
+
+<p>3. Which environmental issue concerns you the most?</p>
+
+<label><input type="radio" name="q3"> Flooding</label>
+
+<label><input type="radio" name="q3"> Pollution</label>
+
+<label><input type="radio" name="q3"> Climate Change</label>
+
+<label><input type="radio" name="q3"> Deforestation</label>
+
+</div>
+
+<button onclick="showHeart()">
+Submit Survey
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= HEART ================= -->
+
+<section id="heartPage" class="page">
+
+<h2>Thank you for answering.</h2>
+
+<p>One last click...</p>
+
+<div id="heart">
+❤️
+</div>
+
+</section>
+
+<!-- ================= LOVE PAGE ================= -->
+
+<section id="lovePage" class="page">
+
+<div id="floatingHearts"></div>
+
+<div class="slideshow">
+
+<img id="slide" src="images/pic1.jpg">
+
+</div>
+
+<div class="message">
+
+<h2>Surprise! ❤️</h2>
+
+<p id="loveText"></p>
+
+</div>
+
+<div class="proposal">
+
+<h1>Will you go on a date with me?</h1>
+
+<div class="buttons">
+
+<button id="yesBtn">
+YES ❤️
+</button>
+
+<button id="noBtn">
+Maybe 🙈
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
