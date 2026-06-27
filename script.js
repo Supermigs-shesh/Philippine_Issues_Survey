@@ -4,6 +4,7 @@
 
 const welcome = document.getElementById("welcome");
 const survey = document.getElementById("survey");
+const survey2 = document.getElementById("survey2");
 const heartPage = document.getElementById("heartPage");
 const lovePage = document.getElementById("lovePage");
 
@@ -13,6 +14,10 @@ function showPage(page){
     });
 
     page.classList.add("active");
+}
+
+function nextSurvey(){
+    showPage(document.getElementById("survey2"));
 }
 
 // ======================
@@ -33,7 +38,7 @@ function showHeart(){
 
     let answered = true;
 
-    ["q1","q2","q3"].forEach(q=>{
+    ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10"].forEach(q=>{
         if(!document.querySelector(`input[name="${q}"]:checked`)){
             answered = false;
         }
@@ -203,13 +208,73 @@ no.style.transform=`translate(${x}px,${y}px)`;
 // YES BUTTON
 // ======================
 
-document.getElementById("yesBtn").onclick=function(){
+document.getElementById("yesBtn").onclick = function () {
 
-alert("❤️ YAY!! You just made me the happiest person! ❤️\n\nI can't wait for our date. 🌹");
+    createConfetti();
 
-createConfetti();
+    const popup = document.createElement("div");
 
-}
+    popup.innerHTML = `
+    <div style="
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width:90%;
+        max-width:420px;
+        background:white;
+        border-radius:25px;
+        padding:25px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,.3);
+        z-index:9999;
+    ">
+
+        <h1 style="font-size:55px;">❤️</h1>
+
+        <h2 style="color:#ff2d75;">
+            You said YES!
+        </h2>
+
+        <p style="
+            margin-top:15px;
+            line-height:1.8;
+            font-size:17px;
+        ">
+            Thank you for saying <b>YES</b>. ❤️
+            <br><br>
+            You just made me the happiest person.
+            <br><br>
+            I can't wait to spend our first date with you and create many wonderful memories together.
+            🌹
+        </p>
+
+        <button id="closePopup"
+        style="
+        margin-top:20px;
+        background:#ff2d75;
+        color:white;
+        border:none;
+        padding:12px 30px;
+        border-radius:30px;
+        font-size:16px;
+        cursor:pointer;
+        ">
+        ❤️ Continue
+        </button>
+
+    </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    document.getElementById("closePopup").onclick=function(){
+
+        popup.remove();
+
+    };
+
+};
 
 // ======================
 // CONFETTI
